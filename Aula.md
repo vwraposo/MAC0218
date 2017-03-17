@@ -13,6 +13,7 @@
     * Presença -> 1/3 da Nota
 
 ---
+
 # Aula 1 - 10/3
 
 **What makes a great Software Engineer:**
@@ -141,7 +142,7 @@ HTTP _response_ from server:
 
 **Cookies**
 
-Antigamente as páginas eram fixas, iguais para todo mundo. Mas queriam tornar mais dinâmicas, no entanto, o protocolo HTTP não permitia, então foram criados os cookies. Que são informações do usuário, armazenadas no disco local. 
+Antigamente as páginas eram fixas, iguais para todo mundo. Mas queriam tornar mais dinâmicas, no entanto, o protocolo HTTP não permitia, então foram criados os cookies. Que são informações do usuário, armazenadas no disco local.
 
 Eles podem ser usados para várias coisas:
 
@@ -156,3 +157,156 @@ Regra de ouro: não confiar no cliente, os cookies devem ser evidentes se houver 
 Servidor Web - Servidor de Aplicações (Rack)- Banco de dados
 
 (Presentation Tier) $\quad$ $\quad$ (logic tier) $\quad$ $\quad$ $\quad$ (persistence tier)
+
+---
+
+# Aula 17/03
+
+### HTML + CSS
+**Linguagem de marcação de hypertexto (HTML)**
+
+* Document = Hierarcy of elements
+
+    * inline (headings, tablesm lists, paragraphs)
+    * embedded (images, JavaScript)
+    * forms - allow user to submit simple input (text, radio/check buttons, dropdown menus ...)
+
+* Elements delimited by ```<tag> .... <tag>```
+    * Some have content: ```<p>Hello world</p>```
+    * Some have attributes
+    ``` <img src="http://...">
+    ```
+    * _id_ and _class_ atributes useful for styling
+
+**Cascading Style Sheets (CSS)**
+
+``` HTML
+<link rel="stylesheet" href="http://..."/>
+```
+Coloca essa linha no elemento ```<head``` para determinar qual stylesheet (CSS) que vai com a pagina HTML
+
+O _id_ e _class_ são atributos importantes no CSS
+
+* _id_ must be unique within this page
+* same _class_ can be attached to many elements
+
+### Model-View-Controller
+
+##### Frameworks
+
+Estrutura básica de uma aplicação, que o programador vai apenas desenvolver as "lacunas" e o aplicativo estará pronto.
+
+Goal: separate organization of data (model) from UI and presentation (view) by inroducing controller
+
+* mediates user actions requesting access to Data
+* presents data for rendering by the view
+
+Web apps may seem "obviosly" MVC by design, but other alternatives are possible. Exemples: Ruby Sinatra, Front Controller (J2EE servlet), Template view (PHP)
+\[
+    View \leftrightarrow Controller \leftrightarrow Model
+\]
+
+_Exemplo:_ Rottentomatoes
+
+* Filmes
+    * Model: contem os dados do filme (nome, dados, atores, ano, duração, nota ...)
+    * Controller: cria filmes, apaga Filmes
+    * View: mostra as informações
+* Moviegoers
+    * M
+    * C
+    * V
+* Reviews
+    * M
+    * C
+    * V
+* Teremos relações entre os dados, Moviegoers podem criar Reviews para Filmes.
+
+### REST - Representational State Trandfer
+
+* Idea: URI names _resource_, not _page_ or _action_
+    * Self-contained: which _resource_, and what to do to it
+    * Responses include hyperlinks to discover additional RESTful _resources_
+    * "a post hoc (after the fact) description of the features that made the Web successful"
+
+* A service (in the SOA sense) whose operations are like this, is a RESTful service
+
+* Ideally, RESTful URIs name the operations
+
+Então, antes as informações na URI eram diretorios, agora são argumentos para uma operação CRUD.
+
+POST - **C**reate
+
+GET - **R**ead
+
+PUT - **U**pdate
+
+DELETE - **D**
+
+_Exercício:_ Design REST para uma Loja Online de Sucos
+
+Site: sucos.com.br
+
+Listar todos os sucos:
+    * GET: sucos.com.br/sucos
+
+Listar informações de um suco expecífico:
+    * GET: sucos.com.br/sucos/82
+
+Criar um suco novo:
+    * GET: sucos.com.br/sucos/new -> devolve um formulário em branco
+    * POST: sucos.com.br/sucos
+
+### Ruby
+
+* Interpreted
+* Object-oriented (Smalltalk-like)
+    * Everything is an object
+    * Every operation is a method call on some object
+* Dynamically typed: objects have types, but variables don't
+* Dynamic
+    - add, modify code at runtime (metaprogramming)
+    - ask objects about themselves (reflection)
+    - in a sense all programming is metaprogramming
+
+* ClassNames use CamelCase
+    ``` Ruby
+        class FriendFinder ... end
+    ```
+* methods and variables use snake_cas
+``` Ruby
+    def learn_conventions ... end
+    def faculty_member? ... end
+    def charge_credit_card! ... end
+```
+* CONSTANTS (scoped) and $GLOBALS (not scoped)
+``` Ruby
+    TEST_MODE = true
+    $TEST_MODE = true
+```
+* symbols and strings
+``` Ruby
+    var = :symbol
+    .tosym
+    .tostring
+```
+* There are no declarations
+    * local variables must be assigned before use
+    * instance and class variables == nil untill assigned
+
+> variável de instância, cada objeto da classe tem uma
+> variável de classe compartilhada por todos objetos da classe
+
+* Array
+``` Ruby
+    x = [1, "two", :three]
+    #x[1] => "two"
+    #x.length => 3
+```
+
+* Hash
+``` Ruby
+    w = {'a' => 1, :b => [2, 3]}
+    #w[:b][0] => 2
+    #w.keys => ['a', :b]
+```
