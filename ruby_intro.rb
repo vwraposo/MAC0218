@@ -32,9 +32,8 @@ def hello(name)
     "Hello, " + name
 end
 
-# Falta eliminar simbolos como #
 def starts_with_consonant? s
-    (s =~ /^[^AaEeIiOoUu\d\s]/) != nil
+    (s =~ /^([b-d]|[B-D]|[f-h]|[F-H]|[j-n]|[J-N]|[p-t]|[P-T]|[v-z]|[V-Z])/) != nil 
 end
 
 def binary_multiple_of_4? s
@@ -42,7 +41,26 @@ def binary_multiple_of_4? s
 end
 
 # Part 3
-#
+
 class BookInStock
+    def initialize(isbn, price)
+        if (isbn == '') || (price < 0) ; raise ArgumentError ; end
+        @isbn = isbn
+        @price = price
+    end
+
+    attr_accessor(:isbn, :price)
+
+    def price_as_string
+        s = price.to_s.split(".")
+        if s[1] == nil
+            s[1] = "00"
+        elsif s[1].length >= 2  
+            s[1] = s[1][0...2]
+        else
+            s[1] = "#{s[1]}" + "0"
+        end
+        "$" + s[0] + "." + s[1]
+    end
 end
 
