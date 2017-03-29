@@ -1,16 +1,16 @@
-# MAC0218 - Técnicas de Programação II
+# MAC0218 - TÃ©cnicas de ProgramaÃ§Ã£o II
 ##### Fabio Kon - Sala
 
 ##### Bibliografia:
-*  Construindo Software como serviço
+*  Construindo Software como serviï¿½o
 
-##### Informações
+##### InformaÃ§Ãµes
 * Sistema Online: edx.org
 * Atividades:
     * Leituras -> resumo
     * Homeworks
     * Projeto
-    * Presença -> 1/3 da Nota
+    * PresenÃ§a -> 1/3 da Nota
 
 ---
 
@@ -23,7 +23,7 @@ Personal skills:
 * Always improving
 * Passionate
 * Technically open-minded
-* Data driven (Toma as decisões baseadas em dados)
+* Data driven (Toma as decisÃµes baseadas em dados)
 
 Team skills:
 
@@ -57,21 +57,21 @@ Decision Making:
 **Tecnicas**
 
 * Conversar com o cliente, ter feedback
-* Esboço do sistema no papel
+* EsboÃ§o do sistema no papel
 * User stories and scenarios (mini relatorios??)
 * Test-first development
 * Medir a velocidade
-* Implatação
+* ImplantaÃ§Ã£o
 
-Atualmente é muito raro criar um software do zero, normalmente trabalha-se em software já prontos. Com manutenção ou atualizações -> "Legacy Code"
+Atualmente Ã© muito raro criar um software do zero, normalmente trabalha-se em software jÃ¡ prontos. Com manutenÃ§Ã£o ou atualizaÃ§Ãµes -> "Legacy Code"
 
-Além disso temos design patterns para tornar o software mais elegante
+AlÃ©m disso temos design patterns para tornar o software mais elegante
 
-**SaaS - Software como Serviço**
+**SaaS - Software como ServiÃ§o**
 
-Serviço que rodam na nuvem que é acessado remotamente. Exemplo, "Word" vs "Google Docs".
+ServiÃ§o que rodam na nuvem que Ã© acessado remotamente. Exemplo, "Word" vs "Google Docs".
 
-Para desenvolver um SaaS: métodos ágeis, computação em nuvem, frameworks e ferramentas de produção.
+Para desenvolver um SaaS: mÃ©todos Ã¡geis, computaÃ§Ã£o em nuvem, frameworks e ferramentas de produÃ§Ã£o.
 
 **Consumo de Recursos**
 
@@ -80,29 +80,29 @@ Para desenvolver um SaaS: métodos ágeis, computação em nuvem, frameworks e ferra
 * Testing
 * Maintenance - Gasta mais Recursos
 
-Para um software ter uma manuntenção mais facil:      
+Para um software ter uma manuntenï¿½ï¿½o mais facil:      
 
-* Documentação enxuta
-* Comentário útitulo
-* Código claro
+* DocumentaÃ§Ã£o enxuta
+* ComentÃ¡rio titulo
+* CÃ³digo claro
 
 ### Capitulo 2
 
 Web como sistema Cliente-Servidor.
 
-Internet é o conjunto de computadores que utiliza o protocolo TCP/IP.
+Internet Ã© o conjunto de computadores que utiliza o protocolo TCP/IP.
 
-Em cima da Internet criou-se a Web, que era para ser um conjunto de páginas com hyperlink. Porém nos anos 2000, viu-se que era posivel usar a Web como plataforma de serviços.
+Em cima da Internet criou-se a Web, que era para ser um conjunto de pÃ©ginas com hyperlink. PorÃ©m nos anos 2000, viu-se que era posivel usar a Web como plataforma de serviÃ§os.
 
-Web e uma arquitetura cliente/servidor, onde o browser é o cliente e o site o servidor. É fundamentalmente orientado no sistema "request/reply"
+Web e uma arquitetura cliente/servidor, onde o browser Ã© o cliente e o site o servidor. Ã‰ fundamentalmente orientado no sistema "request/reply"
 
 **IP (Internet Protocol)**
 
-O endereço IP é identificado com 4 "octets", por exemplo: 128.32.244.172
+O endereÃ§o IP Ã© identificado com 4 "octets", por exemplo: 128.32.244.172
 
-> O endereço especial 127.0.0.1 é "esse computador", nomeado localhost, mesmo que não esteja conectado com a Internet
+> O endereÃ§o especial 127.0.0.1 Ã© "esse computador", nomeado localhost, mesmo que nÃ£o esteja conectado com a Internet
 
-Atualmente, na versão IPv4, não possui endereços para todos os clientes, então usa-se um IP temporário para alguns IPs (exemplos são os celulares). Servidores tem sempre IPs fixos.
+Atualmente, na versÃ£o IPv4, nÃ£o possui endereÃ§os para todos os clientes, entÃ£o usa-se um IP temporÃ¡rio para alguns IPs (exemplos sÃ£o os celulares). Servidores tem sempre IPs fixos.
 
 **TCP/IP (Transmission Control Protocol/Internet Protocol)**
 
@@ -110,7 +110,7 @@ Atualmente, na versão IPv4, não possui endereços para todos os clientes, então u
 
 > Comando _traceroute_ mostra todos os computadores que o pacote passou
 
-O IP: não tem garantia de entrega dos pacotes. Faz o melhor esforço mas pode perder os pacotes.
+O IP: nÃ£o tem garantia de entrega dos pacotes. Faz o melhor esforÃ§o mas pode perder os pacotes.
 
 O TCP usa o IP e torna-o confiavel, detectando se houve perda de pacote, mantendo a ordem dos pacotes, transmitindo erros, etc..
 
@@ -118,11 +118,11 @@ O _TCP ports_ permite multiplos aplicativos TCP no mesmo computador
 
 **Domain Name System (DNS)**
 
-Um servidor que traduz nomes para IPs e conexão fixa
+Um servidor que traduz nomes para IPs e conexÃ£o fixa
 
 **HTTP (Hypertext Transfer Protocol)**
 
-Um protocolo de "request/reply" baseado no formato ASCII para a transferencia de informação na Web
+Um protocolo de "request/reply" baseado no formato ASCII para a transferencia de informaÃ§Ã£o na Web
 
 HTTP _request_ includes:
 
@@ -142,19 +142,19 @@ HTTP _response_ from server:
 
 **Cookies**
 
-Antigamente as páginas eram fixas, iguais para todo mundo. Mas queriam tornar mais dinâmicas, no entanto, o protocolo HTTP não permitia, então foram criados os cookies. Que são informações do usuário, armazenadas no disco local.
+Antigamente as pÃ¡ginas eram fixas, iguais para todo mundo. Mas queriam tornar mais dinÃ¢micas, no entanto, o protocolo HTTP nÃ£o permitia, entÃ£o foram criados os cookies. Que sÃ£o informaÃ§Ãµes do usuÃ¡rio, armazenadas no disco local.
 
-Eles podem ser usados para várias coisas:
+Eles podem ser usados para vï¿½rias coisas:
 
-* Customização
+* CustomizaÃ§Ã£o
 * Click tracking
-* Autenticação
+* AutenticaÃ§Ã£o
 
-Regra de ouro: não confiar no cliente, os cookies devem ser evidentes se houver alterações (tamper-evident).
+Regra de ouro: nÃ£o confiar no cliente, os cookies devem ser evidentes se houver alteraÃ§Ãµes (tamper-evident).
 
 **3-tier shared nothing architecture**
 
-Servidor Web - Servidor de Aplicações (Rack)- Banco de dados
+Servidor Web - Servidor de AplicaÃ§Ãµes (Rack)- Banco de dados
 
 (Presentation Tier) $\quad$ $\quad$ (logic tier) $\quad$ $\quad$ $\quad$ (persistence tier)
 
@@ -163,7 +163,7 @@ Servidor Web - Servidor de Aplicações (Rack)- Banco de dados
 # Aula 17/03
 
 ### HTML + CSS
-**Linguagem de marcação de hypertexto (HTML)**
+**Linguagem de marcaÃ§Ã£o de hypertexto (HTML)**
 
 * Document = Hierarcy of elements
 
@@ -185,7 +185,7 @@ Servidor Web - Servidor de Aplicações (Rack)- Banco de dados
 ```
 Coloca essa linha no elemento ```<head``` para determinar qual stylesheet (CSS) que vai com a pagina HTML
 
-O _id_ e _class_ são atributos importantes no CSS
+O _id_ e _class_ sÃ£o atributos importantes no CSS
 
 * _id_ must be unique within this page
 * same _class_ can be attached to many elements
@@ -194,7 +194,7 @@ O _id_ e _class_ são atributos importantes no CSS
 
 ##### Frameworks
 
-Estrutura básica de uma aplicação, que o programador vai apenas desenvolver as "lacunas" e o aplicativo estará pronto.
+Estrutura bÃ¡sica de uma aplicaÃ§Ã£o, que o programador vai apenas desenvolver as "lacunas" e o aplicativo estarÃ¡ pronto.
 
 Goal: separate organization of data (model) from UI and presentation (view) by inroducing controller
 
@@ -209,9 +209,9 @@ Web apps may seem "obviosly" MVC by design, but other alternatives are possible.
 _Exemplo:_ Rottentomatoes
 
 * Filmes
-    * Model: contem os dados do filme (nome, dados, atores, ano, duração, nota ...)
+    * Model: contem os dados do filme (nome, dados, atores, ano, duraÃ§Ã£o, nota ...)
     * Controller: cria filmes, apaga Filmes
-    * View: mostra as informações
+    * View: mostra as informaÃ§Ãµes
 * Moviegoers
     * M
     * C
@@ -220,7 +220,7 @@ _Exemplo:_ Rottentomatoes
     * M
     * C
     * V
-* Teremos relações entre os dados, Moviegoers podem criar Reviews para Filmes.
+* Teremos relaÃ§Ãµes entre os dados, Moviegoers podem criar Reviews para Filmes.
 
 ### REST - Representational State Trandfer
 
@@ -233,7 +233,7 @@ _Exemplo:_ Rottentomatoes
 
 * Ideally, RESTful URIs name the operations
 
-Então, antes as informações na URI eram diretorios, agora são argumentos para uma operação CRUD.
+Entï¿½o, antes as informaÃ§Ãµes na URI eram diretorios, agora sÃ£o argumentos para uma operaÃ§Ã£o CRUD.
 
 POST - **C**reate
 
@@ -243,18 +243,18 @@ PUT - **U**pdate
 
 DELETE - **D**
 
-_Exercício:_ Design REST para uma Loja Online de Sucos
+_ExercÃ­cio:_ Design REST para uma Loja Online de Sucos
 
 Site: sucos.com.br
 
 Listar todos os sucos:
     * GET: sucos.com.br/sucos
 
-Listar informações de um suco expecífico:
+Listar informaÃ§Ãµes de um suco expecÃ­fico:
     * GET: sucos.com.br/sucos/82
 
 Criar um suco novo:
-    * GET: sucos.com.br/sucos/new -> devolve um formulário em branco
+    * GET: sucos.com.br/sucos/new -> devolve um formulÃ¡rio em branco
     * POST: sucos.com.br/sucos
 
 ### Ruby
@@ -273,7 +273,7 @@ Criar um suco novo:
     ``` Ruby
         class FriendFinder ... end
     ```
-* methods and variables use snake_cas
+* methods and variables use snake_case
 ``` Ruby
     def learn_conventions ... end
     def faculty_member? ... end
@@ -294,8 +294,8 @@ Criar um suco novo:
     * local variables must be assigned before use
     * instance and class variables == nil untill assigned
 
-> variável de instância, cada objeto da classe tem uma
-> variável de classe compartilhada por todos objetos da classe
+> variÃ¡vel de instÃ¢ncia, cada objeto da classe tem uma
+> variÃ¡vel de classe compartilhada por todos objetos da classe
 
 * Array
 ``` Ruby
@@ -310,3 +310,7 @@ Criar um suco novo:
     #w[:b][0] => 2
     #w.keys => ['a', :b]
 ```
+
+---
+
+# Aula 24/03
