@@ -51,14 +51,8 @@ class BookInStock
 
     def price_as_string
         s = price.to_s.split(".")
-        if s[1] == nil
-            s[1] = "00"
-        elsif s[1].length >= 2  
-            s[1] = s[1][0...2]
-        else
-            s[1] = "#{s[1]}" + "0"
-        end
-        "$" + s[0] + "." + s[1]
+        "$" + s[0] + "." + s[1].to_s.ljust(2, "0")
+
     end
 end
 
