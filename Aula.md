@@ -313,4 +313,107 @@ Criar um suco novo:
 
 ---
 
-# Aula 24/03
+# Aula 07/04
+
+### Hello Rails: From zero to CRUD
+
+Padrão Arquitetural: Model-View-Controller
+
+* Controllers: `controllers/*.rb`
+
+* Models: `models/*.rb` - gera -> Tabelas SQL
+
+* Views: `views/*.html`
+
+Componentes de um aplicativo Rails
+
+1. **Rotas** (em `routes.rb`) map incoming URL's to **controller actions** and extract any optional **parameters**
+    * Route's "wildcard" parameters (eg :id) pllus any stuff after "?" in URL, are put into params[] hash accessible in controller actions
+
+2. **Controller actions** set **instance variables**, visible to **views**
+    * Subdirs and filenames of views/ mathc controllers an action names
+
+3. Controller action eventually **renders** a view
+
+
+Rails Philosophy
+
+* Convention over configuration
+    - If naming follow certain conventions, no need for config files
+
+* Don't Repeat Yourself
+
+* Both rely heavily on Ruby features:
+    - introspection and metaprogramming
+    - blocks (closures)
+    - modules (mix-ins)
+
+### Models Databases, and Active Record
+
+* Como representar objetos persistentes no banco
+    - Exemplo: _Movie_ com atributos _name_ and _rating_
+
+* Operaões basicas: CRUD
+
+* ActiveRecord: todo modelo sabe como CRUD em si mesmo, usando mecanismos comuns
+
+* O Rails trabalha com Banco de Dados relacionais (RDBMS), que trabalham com tabelas
+
+* Cada modelo gera uma tabela no banco de dados
+    - Todas as linhas na tablena tem estrutura identica
+    - uma linha = uma instância da classe do modelo
+    - Cada coluna arazena um valor de um atributo do modelo
+    - Cada linha tem um valor único (id)
+
+* Definição de modelo:
+    - Subclasse de ActiveRecord::Base
+        - "conecta" um modelo no database
+        - fornece operação CRUD
+
+* O nome da tabela é derivado do nome do modelo  Movie -> movies
+
+* O nome das colunas do database são os getters e setters e atributos do modelo.
+
+**Create**
+
+* Deve chamar `save` ou `save!` na instância do modelo para de fato salvar no DB. Ou o comando `create` que combina `new` e `save`
+
+* Uma vez criado o objeto adquire uma chave primaria
+
+### Controllers
+
+Ex.: `get '/pastries/:flavor' => 'pastries#eat' : as 'eat_dessert'`
+
+* Em uma view:
+    `link_to 'Eat', eat_dessert_path('cherry')` -> `<a href="/pastries/cherry>Eat</a>"`
+
+* Multiplos ambientes e muitos DB: production, test, development
+
+* Migração: script que descreve mudanças, portavel entre tipos de DB
+
+* Consegeue identificar cada migracao e saver qual que foi aplicada e quando
+
+* Pode gerenciar com controle de versão
+
+**Code Generator**
+
+`rails generate migration CreateMovies`
+
+Isso apenas cria a migração, não foi aplicada ainda
+
+Aplicar migração em desenvolvimento:
+`rails db:migrate`
+
+Aplicar migração para produção:  `heroku rails db:migrate`
+
+**Rails Cookery**
+
+* Aumentar funcionalidade = adicionar novos models views e controller actions
+
+Para adicionar um novo modelo para a aplicacão
+
+1. Criar migração descrevendo as mudanças
+2. Aplicar a migração
+3. Criar arquivo do modelo (se o modelo for novo)
+4. Atualizar o schema do DB de teste
+5. Implantação de produção
