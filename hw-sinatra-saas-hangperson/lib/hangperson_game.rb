@@ -19,7 +19,7 @@ class HangpersonGame
     end                                                                          
 
     def guess(char)                                                              
-        raise (ArgumentError) if (char =~ /\W/) || (char.nil?) || (char == '')
+        raise ArgumentError if (char =~ /\W/) || (char.nil?) || (char == '')
 
         valid = false
         char.downcase!
