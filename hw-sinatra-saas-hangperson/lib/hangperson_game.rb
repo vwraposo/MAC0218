@@ -14,12 +14,11 @@ class HangpersonGame
         @word = word                                                             
         @guesses = ''                                                            
         @wrong_guesses = ''                                                      
-        @word_with_guesses = ''
-        word.size.times {@word_with_guesses << '-'}
+        @word_with_guesses = '-'*@word.size
     end                                                                          
 
     def guess(char)                                                              
-        raise ArgumentError if (char =~ /\W/) || (char.nil?) || (char == '')
+        raise ArgumentError unless char =~ /\w/
 
         valid = false
         char.downcase!
